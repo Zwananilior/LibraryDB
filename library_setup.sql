@@ -81,15 +81,17 @@ INSERT INTO patrons (id, name, email, borrowed_books) VALUES
 -- Get all books
 SELECT * FROM books ORDER BY id;
 
--- Get a book by title (case-insensitive)
-PREPARE get_book_by_title(text) AS
-  SELECT b.*, a.name AS author_name FROM books b LEFT JOIN authors a ON b.author_id = a.id WHERE LOWER(b.title) = LOWER($1);
+SELECT b.*, a.name AS author_name
+FROM books b
+LEFT JOIN authors a ON b.author_id = a.id
+WHERE LOWER(b.title) = LOWER('1984');
 
 -- Example: EXECUTE get_book_by_title('1984');
 
--- Get all books by a specific author (by author name)
-PREPARE get_books_by_author(text) AS
-  SELECT b.* FROM books b JOIN authors a ON b.author_id = a.id WHERE LOWER(a.name) = LOWER($1);
+SELECT b.* 
+FROM books b 
+JOIN authors a ON b.author_id = a.id 
+WHERE LOWER(a.name) = LOWER('George Orwell');
 
 -- Example: EXECUTE get_books_by_author('George Orwell');
 
