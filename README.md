@@ -1,3 +1,23 @@
+# Library Management System (PostgreSQL)
+
+## Overview
+This project is a small Library Management System implemented with PostgreSQL. It contains SQL scripts to create a database, tables, sample data, and example queries and operations for adding, updating, deleting, and querying records.
+
+
+## Files
+- `library_setup.sql` — SQL script that creates the `LibraryDB` database, tables (`authors`, `books`, `patrons`), inserts sample data, and includes example queries and tasks for each sprint.
+- `README.md` — This file.
+
+## How to run (psql)
+1. Open a terminal.
+2. Start psql as a PostgreSQL superuser (or a user that can create databases):
+   ```
+   psql -U postgres
+   ```
+3. In the `psql` prompt, run the script (adjust path if necessary):
+   ```
+   \i /path/to/library_setup.sql
+   ```
    The script will attempt to create `LibraryDB` and then connect to it. If you already created `LibraryDB` in pgAdmin, you can comment out the `CREATE DATABASE` line and the `\connect` line and run the rest of the script inside that database.
 4. To run prepared statements or sample commands, copy and paste them into psql and execute. For prepared statements, use `EXECUTE ...` (examples are commented in the script).
 
