@@ -1,4 +1,7 @@
+# Library Management System (PostgreSQL)
 
+## Overview
+This project is a small Library Management System implemented with PostgreSQL. It contains SQL scripts to create a database, tables, sample data, and example queries and operations for adding, updating, deleting, and querying records.
 
 
 ## Files
