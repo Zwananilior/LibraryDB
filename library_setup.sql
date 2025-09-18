@@ -76,6 +76,26 @@ INSERT INTO patrons (id, name, email, borrowed_books) VALUES
 -- ==================
 -- Task Queries (Sprint examples)
 -- ==================
+-- SPRINT 3: Read Operations
+-- Get all books
+SELECT * FROM books ORDER BY id;
+
+SELECT b.*, a.name AS author_name
+FROM books b
+LEFT JOIN authors a ON b.author_id = a.id
+WHERE LOWER(b.title) = LOWER('1984');
+
+-- Example: EXECUTE get_book_by_title('1984');
+
+SELECT b.* 
+FROM books b 
+JOIN authors a ON b.author_id = a.id 
+WHERE LOWER(a.name) = LOWER('George Orwell');
+
+-- Example: EXECUTE get_books_by_author('George Orwell');
+
+-- Get all available books
+SELECT * FROM books WHERE available = TRUE ORDER BY title;
 
 
 -- SPRINT 4: Update Operations
